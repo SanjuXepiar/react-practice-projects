@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.underLine {
+  height: 0.5rem;
+  width: 80%;
+  background: red;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
