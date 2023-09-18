@@ -10,6 +10,7 @@ function App() {
   const [edited, setEdited] = useState({ taskName: "", id: "" });
 
   //
+
   const handleEdit = (task) => {
     setEdited(task);
     setInput(task.taskName);
@@ -34,6 +35,7 @@ function App() {
       setAlert("");
     }, 2000);
   };
+
   const handleDelete = (id) => {
     const leftTodo = todo.filter((item) => item.id !== id);
     setTodo(leftTodo);
@@ -61,10 +63,9 @@ function App() {
       setTodo([newInput, ...todo]);
       const locallyPresent = localStorage.getItem("list");
       if (locallyPresent) {
-        const localItem = JSON.parse(locallyPresent);
-        const updatedItem = [...localItem, newInput];
+        let locallyPresentItem = JSON.parse(locallyPresent);
+        const updatedItem = { ...locallyPresentItem, newInput };
         localStorage.setItem("list", JSON.stringify(updatedItem));
-        console.log(updatedItem);
       } else {
         localStorage.setItem("list", JSON.stringify(newInput));
       }
