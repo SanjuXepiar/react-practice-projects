@@ -26,9 +26,9 @@ function App() {
       return task;
     });
 
+    localStorage.setItem("list", JSON.stringify(editedItem));
     setAlert("Item Updated");
     setTodo(editedItem);
-    localStorage.setItem("list", JSON.stringify(editedItem));
     setEdited({});
     setInput("");
     setTimeout(() => {
